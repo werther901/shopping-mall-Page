@@ -1,0 +1,221 @@
+body {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  border: 0;
+  /* font-size: 0; */
+  /* font-size: 16px; */
+  box-sizing: border-box;
+  font-family: "Pretendard-Regular", sans-serif;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  /* max-width: 1476px; */
+}
+
+main {
+  flex: 1;
+  min-width: 1200px;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1476px;
+  margin-top: 90px;
+  margin-bottom: 120px;
+}
+
+.cartTitle {
+  width: 80%;
+  font-size: 28px;
+}
+
+.tableCustom {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.tableTr {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.tableImgTitle {
+  text-align: center;
+  width: 250px;
+}
+
+.tableImgTitle img {
+  border-radius: 10px;
+  width: 140px;
+  height: 140px;
+}
+
+.goodsName {
+  font-size: 17px;
+}
+
+.goodsCount input {
+  width: 42px;
+  border: 1px solid #d2d1d1;
+  border-radius: 5px;
+}
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  border: 1px solid #acacac;
+  border-radius: 20px;
+  padding: 20px 24px;
+  margin: 5px 0;
+}
+
+.itemImg img {
+  border-radius: 15px;
+}
+
+.deleteItem {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.noCartItem_01 {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.noCartItem_01 img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.deleteCart {
+  margin-bottom: 15px;
+  width: 18.4%;
+  align-self: flex-end;
+  transition: 0.2s;
+}
+
+.deleteCart button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #8c8c8c;
+  background-color: #8c8c8c;
+  color: #fff;
+}
+
+.deleteCart button:hover {
+  border: 1px solid #b3b3b3;
+  background-color: #b3b3b3;
+}
+
+.totalAmountContainer {
+  background-color: #eee;
+  width: 70%;
+  height: 210px;
+  max-width: 1476px;
+  position: relative;
+  margin-top: 50px;
+}
+
+.totalAmountWrap {
+  background-color: #fff;
+  width: 98%;
+  height: 93%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #4a4a4a;
+  font-size: 16px;
+}
+
+.totalAmount {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+}
+
+.totalAmount_Item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.AllAmountAndBtn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.totalPrice {
+  font-size: 21px;
+  font-weight: 700;
+  color: rgb(253, 42, 42);
+}
+
+.totalPrice span {
+  font-size: 19px;
+}
+
+.totalPrice .totalPrice_span {
+  color: #333;
+}
+
+.totalBtn {
+  margin-left: 20px;
+}
+
+.totalBtn button {
+  padding: 10px 60px;
+  border-radius: 5px;
+  background-color: rgb(86, 205, 244);
+  border: 1px solid rgb(86, 205, 244);
+  color: #fff;
+}
+
+.totalBtn button:hover {
+  background-color: rgba(86, 205, 244, 0.806);
+}
+
+@media (max-width: 1400px) {
+  .deleteCart {
+    width: 19%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .deleteCart {
+    width: 20.3%;
+  }
+}

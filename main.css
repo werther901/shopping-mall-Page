@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  border: 0;
+  /* font-size: 0; */
+  /* font-size: 16px; */
+  box-sizing: border-box;
+  font-family: "Pretendard-Regular", sans-serif;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+#like {
+  width: 20px;
+  height: 20px;
+  fill: #ddd;
+}
+
+#like.active {
+  fill: red;
+}
+
+main {
+  flex: 1;
+  min-width: 1200px;
+}
+
+.mainContainer {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 90px;
+  margin-bottom: 40px;
+  min-width: 1200px;
+}
+
+.slideDiv {
+  width: 100%;
+  max-width: 1476px;
+  height: 640px;
+  background-color: rgb(200, 200, 200);
+  border-radius: 24px;
+  max-width: 1476px;
+  margin: 0 auto;
+}
+
+.goodsContent {
+  font-size: 25px;
+  padding: 22px 87px 0;
+  max-width: 1476px;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+
+.itemContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1476px;
+  padding: 22px 24px;
+  margin: 0 auto;
+}
+
+.item01 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.sizeDown {
+  width: 160px;
+  height: 160px;
+}
+
+.itemCont {
+  display: flex;
+  width: 100%;
+  /* gap: 55px; */
+  padding: 5px;
+  max-width: 160px;
+}
+
+.itemInfo {
+  width: 100%;
+}
+
+.likeGoods > svg {
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.noItemWrap {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.noItemWrap svg {
+  width: 60px;
+  height: 60px;
+  fill: rgb(255, 100, 100);
+  margin: 10px 0;
+}
+
+.noSell {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}

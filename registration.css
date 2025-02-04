@@ -1,0 +1,174 @@
+body {
+  margin: 0 auto;
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+table,
+thead,
+tr,
+th,
+td {
+  border: 1px solid #808080;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+
+table {
+  width: 70%;
+}
+
+.main-wrap {
+  margin-top: 20px;
+}
+
+.main_wrap_title {
+  margin-bottom: 5px;
+  font-size: 25px;
+}
+
+table {
+  width: 100%;
+}
+
+.tableCustom {
+  margin-bottom: 100px;
+}
+
+th {
+  background-color: #ffe4e1; /* 연한 핑크 */
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+td {
+  background-color: #f5f5dc; /* 연한 베이지 */
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inputContainer {
+  margin: 50px 0;
+  border: 1px solid #abb9c4;
+  padding-bottom: 10px;
+}
+
+.goodsDiv {
+  background-color: #abb9c4;
+  color: #fff;
+  padding: 7px 10px;
+  margin-bottom: 10px;
+}
+
+.input-wrap {
+  /* margin-top: 40px; */
+  text-align: center;
+}
+
+.title {
+  display: inline-block;
+  width: 70px;
+}
+
+input {
+  max-width: 1000px;
+  width: 50%;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #bbbbbb;
+}
+
+.content01,
+.content02,
+.content03,
+.content04 {
+  width: 43%;
+  text-align: start;
+  margin: 0 auto;
+  color: rgb(255, 68, 68);
+}
+
+.sortTr {
+  vertical-align: middle;
+}
+
+.sizeDown {
+  width: 140px;
+  height: 140px;
+}
+
+.saveData {
+  margin-top: 10px;
+}
+
+.saveData:disabled {
+  border: 1px solid lightgray;
+  background-color: #ddd;
+}
+
+.btn-pastel {
+  background-color: #ffb6c1; /* 연한 핑크 */
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-pastel:hover {
+  background-color: #ffcccb; /* 약간 더 진한 핑크 */
+  transform: scale(1.05); /* 약간 확대 */
+  color: #000;
+}
+
+.btn-pastel:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.7);
+}
+
+.correctBtn {
+  border: 1px solid #5f9ffff6;
+  border-radius: 7px;
+  color: #5f9ffff6;
+  background-color: #fff;
+  padding: 2px 8px;
+}
+
+.delTr {
+  border: 1px solid #5f9ffff6;
+  border-radius: 7px;
+  color: #fff;
+  background-color: #5f9ffff6;
+  padding: 2px 8px;
+}
+
+.correctBtn:hover {
+  background-color: #5f9ffff6;
+  border: 1px solid #5f9ffff6;
+  color: #fff;
+}
+
+.delTr:hover {
+  background-color: #7b7b7b;
+  border: 1px solid #7b7b7b;
+}
+
+.correctBtn:disabled {
+  background-color: #9f9f9f;
+  border: 1px solid #9f9f9f;
+  color: #fff;
+}

@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  border: 0;
+  /* font-size: 0; */
+  /* font-size: 16px; */
+  box-sizing: border-box;
+  font-family: "Pretendard-Regular", sans-serif;
+  overflow-x: hidden;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.homeContainer {
+  margin: 0 auto;
+}
+
+main {
+  min-width: 1200px;
+  padding-top: 80px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.mainContainer_img {
+  width: 350px;
+  height: 350px;
+  margin-top: 30px;
+
+}
+
+.mainContainer_img img {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.mainContainer_cont {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  font-size: 28px;
+  width: 389px;
+}
+
+.mainContainer_cont01 {
+  margin-bottom: 30px;
+}
+
+.goodsName {
+  margin-bottom: 5px;
+}
+
+.goodsPrice {
+  font-weight: 700;
+  border-top: 1px solid #333;
+  padding-top: 10px;
+}
+
+.goodsPrice span {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.goodsCont {
+  font-size: 20px;
+}
+
+.goodsbtn {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.goodsbtn button {
+  padding: 10px 17px;
+  border-radius: 7px;
+  border: 1px solid #383838;
+  background-color: transparent;
+  color: #383838;
+}
+
+.goodsbtn button:hover {
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+}
+
+.goodsbtn .buyNow_btn {
+  border: 1px solid #252525;
+  background-color: #252525;
+  color: #fff;
+}
+
+.goodsbtn .buyNow_btn:hover {
+  border: 1px solid #575757;
+  background-color: #575757;
+}
+
+.mainImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.goodInfo, .shipInfo, .reviewItem, .detailItem {
+  width: 1000px;
+  height: auto;
+}
+
+.goodInfo img,
+.shipInfo img,
+.reviewItem img,
+.detailItem img {
+  width: 100%;
+}
+
+.detailItem {
+  margin-bottom: 120px;
+}
