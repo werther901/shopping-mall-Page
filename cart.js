@@ -20,7 +20,11 @@ const getData = async () => {
       let localPrice = x.price.toLocaleString("ko-KR");
 
       return `<tr id=${x.id} class="tableTr">
-                <th scope="row" class="tableImgTitle"><img src="${x.img}" alt="dd"></th>
+                <th scope="row" class="tableImgTitle">
+                  <a href="/detail.html?id=${x.id}">
+                    <img src="${x.img}" alt="keyboard">
+                  </a>
+                </th>
                 <td class="goodsName"><strong>${x.name}</strong></td>
                 <td class="goodsPrice">${localPrice}원</td>
                 <td class="goodsCount">
@@ -128,8 +132,9 @@ const deleteData = (id) => {
   let newCart = JSON.parse(localStorage.getItem("cart"));
 
   if (newCart != null) {
-    const newCartCal = newCart.reduce((acc, item) => acc + item.count, 0);
+    // const newCartCal = newCart.reduce((acc, item) => acc + Number(item.count), 0);
     // console.log(newCartCal);
+    const newCartCal = newCart.length;
 
     if (newCartCal > 0) {
       cartCount.style.display = "inline-block";

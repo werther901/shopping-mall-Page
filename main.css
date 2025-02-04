@@ -77,7 +77,7 @@ main {
 .itemContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: 96%;
   max-width: 1476px;
   padding: 22px 24px;
   margin: 0 auto;

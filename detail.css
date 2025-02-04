@@ -8,6 +8,7 @@ body {
   box-sizing: border-box;
   font-family: "Pretendard-Regular", sans-serif;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
 }
 
 p {
