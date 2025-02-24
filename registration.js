@@ -1,4 +1,3 @@
-// 버튼 누르면 검사
 const id = document.querySelector(".id");
 const names = document.querySelector(".name");
 const price = document.querySelector(".price");
@@ -42,7 +41,6 @@ window.onload = function () {
   if (localStorage.length !== 0) {
     let newLang = JSON.parse(localStorage.getItem("userInfo"));
     newArray.push(...newLang);
-    // localStorage.setItem("userInfo", JSON.stringify(newArray));
 
     // 저장되어있는 로컬스토리지 데이터로 table 생성
     const addTr = newArray.map((x) => {
@@ -61,6 +59,43 @@ window.onload = function () {
         </tr>`;
     });
     inputData.innerHTML = addTr.join("");
+
+    // table을 csv파일로 다운로드
+    const download = document.querySelector(".download");
+    const tableCustom = document.querySelector(".tableCustom");
+    // 데이터 저장할 변수 선언
+    let csvContent = "\uFEFF";
+
+    // 테이블 헤더 추출
+    const headers = Array.from(tableCustom.querySelectorAll("th"))
+      .map((th) => th.innerText)
+      .join(",");
+
+    csvContent += headers + "\n";
+
+    // 테이블 행 데이터 추출
+    const rows = Array.from(tableCustom.querySelectorAll("tbody tr"));
+    rows.forEach((row) => {
+      const rowData = Array.from(row.querySelectorAll("td"))
+        .map((td) => td.innerText.replace(/,/g, ""))
+        .join(",");
+
+      csvContent += rowData + "\n";
+      // console.log(csvContent)
+    });
+
+    // Blob 생성
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+
+    // 파일 다운로드 함수
+    const fileDownload = () => {
+      const downloadUrl = window.URL.createObjectURL(blob);
+      console.log(downloadUrl);
+      download.href = downloadUrl;
+      download.download = "registration.csv";
+    };
+    download.addEventListener("click", fileDownload);
+
   } else {
     console.log("데이터 없서요");
   }
@@ -143,7 +178,7 @@ const allDataInspect = () => {
 allDataInspect();
 
 // '저장' 버튼 누르면 로컬스토리지 및 tr 추가
-let localStorageSave = (e) => {
+let localStorageSave = () => {
   // let newLang02 = JSON.parse(localStorage.getItem("userInfo"));
   // 이미지 랜덤 뽑기
   const randomImages = images[Math.floor(Math.random() * images.length)];
@@ -359,7 +394,7 @@ const deleteData = (id) => {
     newArray = mapDelTr;
     localStorage.setItem("userInfo", JSON.stringify(newArray));
   } else {
-    localStorage.removeItem('userInfo'); // 로컬스토리지 삭제
+    localStorage.removeItem("userInfo"); // 로컬스토리지 삭제
     newArray = [];
   }
   // console.log(newLang.length);

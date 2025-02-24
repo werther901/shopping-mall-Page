@@ -8,6 +8,10 @@ const footer = document.querySelector("footer");
 const itemContainer = document.querySelector(".itemContainer");
 
 const getData = async () => {
+  // pagination 기능 추가 때문에 redirect
+  if (window.location.href == "http://127.0.0.1:5500/main.html") {
+    window.location.href = "http://127.0.0.1:5500/main.html?page=1";
+  }
   // 1. 로컬스토리지에 저장된 데이터 화면에 표출
   // if (localStorage.length !== 0) {
   if (localStorage.getItem("userInfo") != null) {
@@ -37,8 +41,85 @@ const getData = async () => {
                 </div>
               </div>`;
     });
-    // 기존 html상품들 빼려면 innerHTML = 로 변경
-    itemContainer.innerHTML = addTr.join("");
+    // 한 페이지당 15개의 상품 표출
+    let currentPage = 1;
+    let itemsPerPage = 15;
+
+    // 쿼리스트링 page값 가져오기
+    const params = new URLSearchParams(window.location.search);
+    const urlPage = params.get("page");
+    // console.log(urlPage);
+
+    // pagination - 한 페이지당 15개의 상품 표출
+    let startData = (urlPage - 1) * itemsPerPage;
+    // console.log(startData);
+    let endData = startData + itemsPerPage;
+    // console.log(endData);
+
+    const addTr02 = addTr.slice(startData, endData);
+    itemContainer.innerHTML = addTr02.join("");
+
+    // pagination
+    const pagination = () => {
+      const pagination = document.querySelector(".pagination");
+      // console.log(newArray.length); // number, 아이템 개수
+
+      // console.log(item01.length); // 15
+
+      // 총 페이지 수
+      let totalPage = Math.ceil(newArray.length / itemsPerPage);
+      // 화면에 보여질 페이지 그룹
+      let showScreen = Math.ceil(urlPage / 5);
+      // 화면에 그려질 마지막 페이지
+      let lastPage = showScreen * 5;
+      if (lastPage > totalPage) lastPage = totalPage;
+      // console.log(lastPage)
+      // 화면에 그려질 첫번째 페이지
+      let firstPage = lastPage - (5 - 1) <= 0 ? 1 : lastPage - (5 - 1); // 1
+      // console.log(firstPage)
+      let nextPage = lastPage + 1;
+      let prevPage = firstPage - 1;
+
+      if (newArray.length <= 15) {
+        // 현재 게시물의 개수가 15개 이하이면 pagination 숨기기
+        pagination.innerHTML = "";
+      }
+
+      // '<<', '<' 생성
+      if (prevPage > 0) {
+        pagination.innerHTML = `<li class="page">
+                                  <a href="/main.html?page=1" id="allPreview">
+                                    &lt;&lt;
+                                  </a>
+                                </li>
+                                <li class="page">
+                                  <a href="/main.html?page=${prevPage}" id="preview">
+                                    &lt;
+                                  </a>
+                                </li>`;
+      }
+      // 페이지 수 생성
+      for (let i = firstPage; i <= lastPage; i++) {
+        pagination.innerHTML += `<li class="page"><a href="/main.html?page=${i}" id="page-${i}">${i}</a></li>`;
+      }
+      // '>', '>>' 생성
+      if (lastPage < totalPage) {
+        pagination.innerHTML += `<li class="page">
+                                  <a href="/main.html?page=${nextPage}" id="next">
+                                    &gt;
+                                  </a>
+                                </li>
+                                <li class="page">
+                                  <a href="/main.html?page=${totalPage}" id="allNext">
+                                    &gt;&gt;
+                                  </a>
+                                </li>`;
+      }
+      // 클릭시 active_02 class추가하여 스타일
+      const paginationA = document.querySelector(`.pagination .page a#page-${urlPage}`);
+      paginationA.classList.add("active_02");
+    };
+    pagination();
 
     // 2. fetch 처리 이후 다음 코드 실행(async, await)
     const headerRes = await fetch("header.html");
@@ -51,7 +132,7 @@ const getData = async () => {
 
     // scroll 내리면 header에 on클래스 추가
     const headerContainer = document.querySelector(".headerContainer");
-    console.log(headerContainer); // null
+    // console.log(headerContainer);
 
     const scrollChange = () => {
       if (window.scrollY > 0) {

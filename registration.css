@@ -17,6 +17,10 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 table {
   width: 70%;
 }
@@ -28,6 +32,24 @@ table {
 .main_wrap_title {
   margin-bottom: 5px;
   font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.download {
+  display: inline-flex;
+  background-color: #bababa;
+  color: #fff;
+  border: 1px solid #adadad;
+  font-size: 18px;
+  width: 80px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.download:hover {
+  background-color: #c2c2c2be;
 }
 
 table {
