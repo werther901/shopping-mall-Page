@@ -56,7 +56,7 @@ Vanilla js로 제작하였으며 상품 조회, 상품 등록, 상품 상세, �
 
 <div align="center">
   <img src="./images/download.png" width="40%" />
-  <img src="./images/download_02.png" width="40%" />
+  <img src="./images/download_02.png" width="30%" />
 </div>
 <br/>
 
