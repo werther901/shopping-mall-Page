@@ -116,7 +116,9 @@ const getData = async () => {
                                 </li>`;
       }
       // 클릭시 active_02 class추가하여 스타일
-      const paginationA = document.querySelector(`.pagination .page a#page-${urlPage}`);
+      const paginationA = document.querySelector(
+        `.pagination .page a#page-${urlPage}`
+      );
       paginationA.classList.add("active_02");
     };
     pagination();
@@ -199,7 +201,9 @@ window.addEventListener("load", getData);
 
 // 좋아요 버튼 누르면 색깔 채우기
 const fillLike = (id) => {
-  const like = document.querySelector(`.itemContainer > div[id="${id}"] > div.itemCont > div.likeGoods > svg`);
+  const like = document.querySelector(
+    `.itemContainer > div[id="${id}"] > div.itemCont > div.likeGoods > svg`
+  );
 
   // 좋아요 표시 및 로컬스토리지 변경
   like.classList.toggle("active");
