@@ -28,7 +28,7 @@ const getData = async () => {
                 <td class="goodsName"><strong>${x.name}</strong></td>
                 <td class="goodsPrice">${localPrice}원</td>
                 <td class="goodsCount">
-                  <input class="countInput" oninput="changeQuan(${x.id})" type="number" value="${x.count}">
+                  <input class="countInput" oninput="changeQuan(${x.id})" type="number" value="${x.count}" min="1">
                 </td>
                 <td class="goodsDelete"><img src="./images/trash.svg" alt="delete" class="deleteItem" onclick="deleteData(${x.id})"></td>
               </tr>`;
@@ -36,7 +36,10 @@ const getData = async () => {
     userTbody.innerHTML = addData.join("");
 
     // 1-2. 장바구니 결제금액 계산
-    const calcPrice = newLang.reduce((acc, item) => acc + Number(item.price) * Number(item.count), 0);
+    const calcPrice = newLang.reduce(
+      (acc, item) => acc + Number(item.price) * Number(item.count),
+      0
+    );
     // console.log(calcPrice); // 30000
     const commaPrice = calcPrice.toLocaleString("ko-KR");
     // console.log(commaPrice); // 30,000
@@ -148,7 +151,10 @@ const deleteData = (id) => {
   }
 
   // 최종결제 금액 변경
-  const calcPrice = newCart.reduce((acc, item) => acc + Number(item.price) * Number(item.count), 0);
+  const calcPrice = newCart.reduce(
+    (acc, item) => acc + Number(item.price) * Number(item.count),
+    0
+  );
   console.log(calcPrice); // 30000
   const commaPrice = calcPrice.toLocaleString("ko-KR");
   console.log(commaPrice); // 30,000
@@ -161,7 +167,9 @@ const deleteData = (id) => {
 
 // 수량 변경하면 장바구니 개수 변경 + 로컬스토리지 개수 변경 + 총 금액 계산 변경
 const changeQuan = (id) => {
-  const countInput = document.querySelector(`.userTbody > .tableTr[id="${id}"] > .goodsCount > .countInput`);
+  const countInput = document.querySelector(
+    `.userTbody > .tableTr[id="${id}"] > .goodsCount > .countInput`
+  );
 
   // 로컬스토리지 개수 변경
   let newCart = JSON.parse(localStorage.getItem("cart"));
@@ -176,7 +184,10 @@ const changeQuan = (id) => {
   localStorage.setItem("cart", JSON.stringify(newCart));
 
   // 최종 결제 금액 변경
-  const calcPrice = newCart.reduce((acc, item) => acc + Number(item.price) * Number(item.count), 0);
+  const calcPrice = newCart.reduce(
+    (acc, item) => acc + Number(item.price) * Number(item.count),
+    0
+  );
   console.log(calcPrice); // 30000
   const commaPrice = calcPrice.toLocaleString("ko-KR");
   console.log(commaPrice); // 30,000
@@ -186,7 +197,7 @@ const changeQuan = (id) => {
   goTotalPrice.textContent = commaPrice;
   goTotalPrice_02.textContent = commaPrice;
 
-  // header 장바구니 UI 개수 변경(고쳐야함 -> ??? 뭐고쳐야하는지 까먹음)
+  // header 장바구니 UI 개수 변경
   const cartCount = document.querySelector(".cartCount");
   const cartCountSpan = document.querySelector(".cartCount > span");
   // const newCartCal = newCart.reduce((acc, item) => acc + Number(item.count), 0); // 중복아이템까지 count할 경우
@@ -236,13 +247,13 @@ const deleteAll = () => {
 deleteCart.addEventListener("click", deleteAll);
 
 // 준비중입니다. - SweetAlert2
-const totalBtn = document.querySelector('.totalBtn');
+const totalBtn = document.querySelector(".totalBtn");
 
 function deleteBoard() {
   Swal.fire({
     title: "준비중 입니다.",
     text: "",
-    icon: "warning"
+    icon: "warning",
   });
 }
-totalBtn.addEventListener('click', deleteBoard);
+totalBtn.addEventListener("click", deleteBoard);
